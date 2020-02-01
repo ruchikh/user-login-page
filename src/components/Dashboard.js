@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 
 class Dashboard extends Component {
     render() {
-        const { userData } = this.props;
+        const { userData:{ user = [] } = {} } = this.props;
+
         return (
             <div>
                 <table className="table-wrapper">
@@ -16,15 +17,16 @@ class Dashboard extends Component {
                             <th>Email</th>
                             <th>Phone</th>
                         </tr>
-                        {
-                            userData.user && userData.user.map((item, i) => {
-                                return <tr key="i">
-                                    <td>{item.id}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.age}</td>
-                                    <td>{item.gender}</td>
-                                    <td>{item.email}</td>
-                                    <td>{item.phoneNo}</td>
+                        {user.map((item, i) => {
+                                const {id, name, age, gender, email, phoneNo} = item;
+
+                                return <tr key={i}>
+                                        <td>{id}</td>
+                                        <td>{name}</td>
+                                        <td>{age}</td>
+                                        <td>{gender}</td>
+                                        <td>{email}</td>
+                                        <td>{phoneNo}</td>
                                 </tr>
                             })
                         }
@@ -35,9 +37,9 @@ class Dashboard extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({userData}) => {
     return {
-        userData: state.userData
+        userData
     }
 }
 

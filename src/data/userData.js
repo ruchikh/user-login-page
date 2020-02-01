@@ -8,7 +8,7 @@ export const  inputData = {
             {
                 type: 'email',
                 name: 'username',
-                placeholder: 'Enter Email Id'
+                placeholder: 'Enter your email'
             },
             {
                 type: 'password',

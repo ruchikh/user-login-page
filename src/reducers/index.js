@@ -1,4 +1,4 @@
-import { userCredential, userData } from "../Data/data";
+import { userCredential, userData } from "../data/userData";
 
 const initState = {
     credential: userCredential,
