@@ -75,7 +75,7 @@ class Login extends Component {
                         
                     }
                     <p className="error-msg">{errorMsg}</p>
-                    <button className="submit" type="submit" onClick={this.handleValidation}>Submit</button>
+                    <button className="submit" type="submit">Submit</button>
                 </form>
             </div>
         );
